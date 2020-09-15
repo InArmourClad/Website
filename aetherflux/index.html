@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="disable-dbl-tap-zoom">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <head class="disable-dbl-tap-zoom">
+        <title>Aetherflux</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="scripts/aetherflux.js"></script>
+    </head>
+    <body class="disable-dbl-tap-zoom">
+    <div class="rootDiv" >
+        <div class="textButtonDiv">
+            <button class="textButtonLeft" onclick="onReduceLife()">-</button>
+            <div class="textButtonText">
+                <span>Life total: </span><span id="life_total">20</span>
+            </div>
+            <button class="textButtonRight" onclick="onIncreaseLife()">+</button>
+        </div>
+        <div class="textButtonDiv">
+            <button class="textButtonLeft" onclick="onReduceStorm()">-</button>
+            <div class="textButtonText">
+                <span>Storm count: </span><span id="storm">0</span>
+            </div>
+            <button class="textButtonRight" onclick="onIncreaseStorm()">+</button>
+        </div>
+        <div>
+            <button class="reservoirButton" id="playReservoir" onclick="onPlayReservoir()">Play Reservoir</button>
+            <img class="reservoirImg" id="reservoir" style="display:none" src="artifacts/aetherflux_reservoir.jpg" onclick="onAetherfluxClick(this.src)"/>
+            <button class="reservoirButton" id="destroyReservoir" style="display:none" onclick="onDestroyReservoir()">Destroy Reservoir</button>
+        </div>
+        <div>
+            <button class="lowerButton" onclick="onFireLaser()">FIRE THE LASER</button>
+            <button class="lowerButton" onclick="onEndTurn()">End Turn</button>
+        </div>
+        <br/>
+        <div class="wubrg_button_div">
+            <button class="wubrg_button" onclick="onManaAdd('W')">w+</button>
+            <button class="wubrg_button" onclick="onManaAdd('U')">u+</button>
+            <button class="wubrg_button" onclick="onManaAdd('B')">b+</button>
+            <button class="wubrg_button" onclick="onManaAdd('R')">r+</button>
+            <button class="wubrg_button" onclick="onManaAdd('G')">g+</button>
+            <button class="wubrg_button" onclick="onManaSub('W')">w-</button>
+            <button class="wubrg_button" onclick="onManaSub('U')">u-</button>
+            <button class="wubrg_button" onclick="onManaSub('B')">b-</button>
+            <button class="wubrg_button" onclick="onManaSub('R')">r-</button>
+            <button class="wubrg_button" onclick="onManaSub('G')">g-</button>
+        </div>
+        <div class="wubrg_text_div">
+            <span id="countW" class="wubrg_text_w">0</span>
+            <span id="countU" class="wubrg_text_u">0</span>
+            <span id="countB" class="wubrg_text_b">0</span>
+            <span id="countR" class="wubrg_text_r">0</span>
+            <span id="countG" class="wubrg_text_g">0</span>
+        <img class="mana_symbols" id="mana_symbols" src="artifacts/mana_symbols.jpg"/>
+        <div>
+
+
+        <p><a href="#" onclick="startStandardGame()">Click here</a> to start a standard game</p>
+        <p><a href="#" onclick="startEDHGame()">Click here</a> to start an EDH game</p>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+.textButtonDiv {
+    height: 8vh;
+    width: 100vh;
+}
+.textButtonLeft {
+    position: absolute;
+    left: 0;
+    height: 8vh;
+    width: 8vh;
+    font-size: 4vh;
+}
+.textButtonRight {
+    position: absolute;
+    right: 0;
+    height: 8vh;
+    width: 8vh;
+    font-size: 4vh;
+}
+
+.textButtonText {
+    position:absolute;
+    left: 8vh;
+    right: 8vh;
+    font-size: 4vh;
+    width: 84vw;
+    text-align: center;
+}
+
+.reservoirImg {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+  width: 100vw;
+  margin:0;
+}
+.rootDiv {
+  width: 100vw;
+  position:sticky;
+  margin:0;
+
+}
+
+.reservoirButton {
+    width: 100vw;
+    height: 8vh;
+    font-size: 4vh;
+    text-align: center;
+}
+
+.lowerButton {
+    width:48vw;
+    text-align: center;
+    margin:0.5vw;
+}
+
+.mana_symbols {
+    width: 100vw;
+    object-fit:fill;
+}
+
+.wubrg_button_div {
+    z-index:20;
+    position:absolute;
+}
+.wubrg_text_div {
+    position:absolute;
+    height:18vw;
+}
+
+.wubrg_button {
+    z-index:100;
+    width: 19vw;
+    height: 8vw;
+    opacity: 0;
+    border: 0;
+    padding: 0;
+}
+.wubrg_text_w {
+    font-weight: bold;
+    position:absolute;
+    top: 40%;
+    left: 7vw;
+    width: 19vw;
+    height: 10vh;
+    border: 0;
+    padding: 0;
+    color:white;
+    font-size:4vw;
+}
+.wubrg_text_u {
+    font-weight: bold;
+    position:absolute;
+    top: 40%;
+    left: 28vw;
+    width: 19vw;
+    height: 10vh;
+    border: 0;
+    padding: 0;
+    color:white;
+    font-size:4vw;
+}
+.wubrg_text_b {
+    font-weight: bold;
+    position:absolute;
+    top: 40%;
+    left: 49vw;
+    width: 19vw;
+    height: 10vh;
+    border: 0;
+    padding: 0;
+    color:white;
+    font-size:4vw;
+}
+.wubrg_text_r {
+    font-weight: bold;
+    position:absolute;
+    top: 40%;
+    left: 70vw;
+    width: 19vw;
+    height: 10vh;
+    border: 0;
+    padding: 0;
+    color:white;
+    font-size:4vw;
+}
+.wubrg_text_g {
+    font-weight: bold;
+    position:absolute;
+    top: 40%;
+    left: 91vw;
+    width: 19vw;
+    height: 10vh;
+    border: 0;
+    padding: 0;
+    color:white;
+    font-size:4vw;
+}
