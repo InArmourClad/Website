@@ -15,52 +15,83 @@
         <script src="scripts/aetherflux.js"></script>
     </head>
     <body class="disable-dbl-tap-zoom">
-    <div class="rootDiv" >
-        <div class="textButtonDiv">
-            <button class="textButtonLeft" onclick="onReduceLife()">-</button>
-            <div class="textButtonText">
-                <span>Life total: </span><span id="life_total">20</span>
+    <div class="rootDiv">
+        <div id="primaryControls" class="primaryControls">
+            <div class="textButtonDiv">
+                <button class="textButtonLeft" onclick="onReduceLife()">-</button>
+                <div class="textButtonText">
+                    <span>Life total: </span><span id="life_total">20</span>
+                </div>
+                <button class="textButtonRight" onclick="onIncreaseLife()">+</button>
             </div>
-            <button class="textButtonRight" onclick="onIncreaseLife()">+</button>
-        </div>
-        <div class="textButtonDiv">
-            <button class="textButtonLeft" onclick="onReduceStorm()">-</button>
-            <div class="textButtonText">
-                <span>Storm count: </span><span id="storm">0</span>
+            <div class="textButtonDiv">
+                <button class="textButtonLeftSmall" onclick="onReduceStorm(true)">- (me)</button>
+                <button class="textButtonLeftSmall" style="margin-top:4vh" onclick="onReduceStorm(false)">- (opp)</button>
+                <div class="textButtonText">
+                    <span>Storm count: </span><span id="storm">0</span>
+                </div>
+                <div>
+                <button class="textButtonRightSmall" onclick="onIncreaseStorm(true)">+ (me)</button>
+                <button class="textButtonRightSmall" style="margin-top:4vh" onclick="onIncreaseStorm(false)">+ (opp)</button>
+                </div>
             </div>
-            <button class="textButtonRight" onclick="onIncreaseStorm()">+</button>
-        </div>
-        <div>
-            <button class="reservoirButton" id="playReservoir" onclick="onPlayReservoir()">Play Reservoir</button>
-            <img class="reservoirImg" id="reservoir" style="display:none" src="artifacts/aetherflux_reservoir.jpg" onclick="onAetherfluxClick(this.src)"/>
-            <button class="reservoirButton" id="destroyReservoir" style="display:none" onclick="onDestroyReservoir()">Destroy Reservoir</button>
-        </div>
-        <div>
-            <button class="lowerButton" onclick="onFireLaser()">FIRE THE LASER</button>
-            <button class="lowerButton" onclick="onEndTurn()">End Turn</button>
+            <div>
+                <button class="reservoirButton" id="playReservoir" onclick="onPlayReservoir()">Play Reservoir</button>
+                <div style="position:relative; display:none;" id="reservoirContainer">
+                    <img class="reservoirImg" id="reservoir" style="display:inherit" src="artifacts/aetherflux_reservoir.jpg" onclick="onAetherfluxClick(this.src)"/>
+                    <span id="aetherflux_count" style="display:inherit" class="aetherflux_text">0</span>
+                    <button class="trackTypeButton" id="trackTypeButton" style="display:inherit" onclick="onToggleTrackingType()">Tracking trigger and resolution</button>
+                </div>
+                <button class="reservoirButton" id="destroyReservoir" style="display:none" onclick="onDestroyReservoir()">Destroy Reservoir</button>
+            </div>
+            <div>
+                <button class="lowerButton" onclick="onFireLaser()">FIRE THE LASER</button>
+                <button class="lowerButton" onclick="onEndTurn()">End Turn</button>
+            </div>
         </div>
         <br/>
-        <div class="wubrg_button_div">
-            <button class="wubrg_button" onclick="onManaAdd('W')">w+</button>
-            <button class="wubrg_button" onclick="onManaAdd('U')">u+</button>
-            <button class="wubrg_button" onclick="onManaAdd('B')">b+</button>
-            <button class="wubrg_button" onclick="onManaAdd('R')">r+</button>
-            <button class="wubrg_button" onclick="onManaAdd('G')">g+</button>
-            <button class="wubrg_button" onclick="onManaSub('W')">w-</button>
-            <button class="wubrg_button" onclick="onManaSub('U')">u-</button>
-            <button class="wubrg_button" onclick="onManaSub('B')">b-</button>
-            <button class="wubrg_button" onclick="onManaSub('R')">r-</button>
-            <button class="wubrg_button" onclick="onManaSub('G')">g-</button>
+        <div class="wubrg_table">
+            <div class="wubrg_row">
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/W.png"/>
+                    <button class="wubrg_button_top" onclick="onManaAdd('W')">w+</button>
+                    <span id="countW" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('W')">w-</button>
+                </div>
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/U.png">
+                    <button class="wubrg_button_top" onclick="onManaAdd('U')">u+</button>
+                    <span id="countU" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('U')">u-</button>
+                </div>
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/B.png">
+                    <button class="wubrg_button_top" onclick="onManaAdd('B')">b+</button>
+                    <span id="countB" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('B')">b-</button>
+                </div>
+            </div>
+            <div class="wubrg_row">
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/R.png"/>
+                    <button class="wubrg_button_top" onclick="onManaAdd('R')">r+</button>
+                    <span id="countR" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('R')">r-</button>
+                </div>
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/G.png">
+                    <button class="wubrg_button_top" onclick="onManaAdd('G')">g+</button>
+                    <span id="countG" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('G')">g-</button>
+                </div>
+                <div class="wubrg_single_div">
+                    <img class="mana_symbol_single" src="artifacts/C.png">
+                    <button class="wubrg_button_top" onclick="onManaAdd('C')">c+</button>
+                    <span id="countC" class="wubrg_text">0</span>
+                    <button class="wubrg_button_bottom" onclick="onManaSub('C')">c-</button>
+                </div>
+            </div>
         </div>
-        <div class="wubrg_text_div">
-            <span id="countW" class="wubrg_text_w">0</span>
-            <span id="countU" class="wubrg_text_u">0</span>
-            <span id="countB" class="wubrg_text_b">0</span>
-            <span id="countR" class="wubrg_text_r">0</span>
-            <span id="countG" class="wubrg_text_g">0</span>
-        <img class="mana_symbols" id="mana_symbols" src="artifacts/mana_symbols.jpg"/>
-        <div>
-
 
         <p><a href="#" onclick="startStandardGame()">Click here</a> to start a standard game</p>
         <p><a href="#" onclick="startEDHGame()">Click here</a> to start an EDH game</p>
