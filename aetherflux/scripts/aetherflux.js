@@ -62,6 +62,7 @@ function onEndTurn () {
     document.querySelector("#countR").innerHTML = 0;
     document.querySelector("#countG").innerHTML = 0;
     document.querySelector("#countC").innerHTML = 0;
+    document.querySelector("#aetherflux_count").innerHTML = 0;
     if ( !trackTrigger ){
         onToggleTrackingType();
     }
