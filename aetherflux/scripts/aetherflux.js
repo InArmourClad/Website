@@ -69,7 +69,7 @@ function onEndTurn () {
 };
 
 function onFireLaser() {
-    if ( document.querySelector("#reservoir").display == "none" ) {
+    if ( document.querySelector("#reservoirContainer").style.display == "none" ) {
         window.alert("No reservoir in play");
         return;
 	}
@@ -83,16 +83,9 @@ function onFireLaser() {
     }
 };
 
-function startStandardGame() {
-    document.querySelector("#life_total").innerHTML = 20;
-    storm = 0;
-    document.querySelector("#storm").innerHTML = storm;
-};
-
-function startEDHGame () {
-    document.querySelector("#life_total").innerHTML = 40;
-    storm = 0;
-    document.querySelector("#storm").innerHTML = storm;
+function startNewGame (lifeTotal) {
+    onEndTurn();
+    document.querySelector("#life_total").innerHTML = lifeTotal;
 };
 
 function onToggleTrackingType () {
